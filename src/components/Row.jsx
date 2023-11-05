@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Movie from "./Movie";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const Row = ({ title, fetchURL }) => {
+const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -10,15 +12,37 @@ const Row = ({ title, fetchURL }) => {
     });
   }, [fetchURL]);
 
+  const slideLeft = () => {
+    var slider = document.getElementById("slider" + rowID);
+    slider.scrollLeft = slider.scrollLeft - 500;
+  };
+  const slideRight = () => {
+    var slider = document.getElementById("slider" + rowID);
+    slider.scrollLeft = slider.scrollLeft + 500;
+  };
+
   return (
     <>
       <h2 className="text-white  md:text-xl p-4">{title}</h2>
       <div className="relative flex items-center">
-        <div id={"slider"}>
-          {movies.map((item, id) => {
-            <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer p-2 "></div>;
-          })}
+        <MdChevronLeft
+          onClick={slideLeft}
+          className="bg-white left-0 rounded-full absolute  cursor-pointer opacity-50 hover:opacity-100 z-10"
+          size={40}
+        />
+        <div
+          id={"slider" + rowID}
+          className="w-full h-full relative overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide"
+        >
+          {movies.map((item, id) => (
+            <Movie key={id} item={item} />
+          ))}
         </div>
+        <MdChevronRight
+          onClick={slideRight}
+          className="bg-white right-0 rounded-full absolute  cursor-pointer opacity-50 hover:opacity-100 z-10"
+          size={40}
+        />
       </div>
     </>
   );
