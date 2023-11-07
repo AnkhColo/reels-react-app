@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../Firebase";
+import { db } from "../Firebase";
 
 const AuthContext = createContext();
 
