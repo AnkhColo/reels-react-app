@@ -39,10 +39,10 @@ const Main = () => {
             {truncateString(movie?.overview, 150)}
           </p>
           <button className="border text-black border-gray-300 bg-white cursor-pointer py-2 px-4">
-            Play
+            Play Trailer
           </button>
           <button className="border border-gray-300  cursor-pointer py-2 px-4 ml-3">
-            Watch Later
+            Save Movie
           </button>
         </div>
       </div>
