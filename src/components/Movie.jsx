@@ -11,7 +11,7 @@ const Movie = ({ item }) => {
   const [saved, setSaved] = useState(false);
   const movieID = doc(db, "users", `${user?.email}`);
 
-  const saveShow = async () => {
+  const savedShow = async () => {
     if (user?.email) {
       setLike(!like);
       setSaved(true);
@@ -42,7 +42,7 @@ const Movie = ({ item }) => {
         <p>
           <BiSolidMoviePlay size={25} className=" absolute top-9 left-3" />
         </p>
-        <p onClick={saveShow}>
+        <p onClick={savedShow}>
           {like ? (
             <FaHeart className=" absolute top-4 left-4 text-gray-300" />
           ) : (
