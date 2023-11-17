@@ -13,6 +13,8 @@ const Main = () => {
     });
   }, []);
 
+  console.log(movie);
+
   const truncateString = (str, num) => {
     if (typeof str === "string" && str.length > num) {
       return str.slice(0, num) + "...";
