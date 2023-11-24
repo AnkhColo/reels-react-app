@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import requests from "../Requests";
 import axios from "axios";
+import VideoModal from "./VideoModal";
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
@@ -43,6 +44,7 @@ const Main = () => {
           <button className="border text-black border-gray-300 bg-white cursor-pointer py-2 px-4">
             Play Trailer
           </button>
+
           <button className="border border-gray-300  cursor-pointer py-2 px-4 ml-3">
             Save Movie
           </button>

@@ -4,12 +4,15 @@ import { BiSolidMoviePlay } from "react-icons/bi";
 import { UserAuth } from "../context/AuthContext";
 import { db } from "../Firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import ModalVideo from "react-modal-video";
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
   const { user } = UserAuth();
   const [saved, setSaved] = useState(false);
   const movieID = doc(db, "users", `${user?.email}`);
+
+  const [isOpen, setOpen] = useState(false);
 
   const savedShow = async () => {
     if (user?.email) {
@@ -40,7 +43,21 @@ const Movie = ({ item }) => {
           {item?.title}
         </p>
         <p>
-          <BiSolidMoviePlay size={25} className=" absolute top-9 left-3" />
+          <React.Fragment>
+            <ModalVideo
+              channel="youtube"
+              youtube={{ mute: 0, autoplay: 0 }}
+              isOpen={isOpen}
+              videoId="L61p2uyiMSo"
+              onClose={() => setOpen(false)}
+            ></ModalVideo>
+
+            <BiSolidMoviePlay
+              onClick={() => setOpen(true)}
+              size={25}
+              className=" absolute top-9 left-3"
+            />
+          </React.Fragment>
         </p>
         <p onClick={savedShow}>
           {like ? (
