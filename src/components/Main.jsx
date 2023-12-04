@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import requests from "../Requests";
 import axios from "axios";
-import VideoModal from "./VideoModal";
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
