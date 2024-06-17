@@ -1,4 +1,4 @@
-This project is basically a clone of certain fron-end components of the Netflix web app.
+This project is basically a clone of the Netflix web app.
 
 It contains the following features:
   - A Nav bar with the Logo, Sign In / Sign Up ||  Account / Log Out Buttons
@@ -10,3 +10,8 @@ It contains the following features:
 
     Additional features being added are:
     - The ability to watch the trailer of any movie via a video modal. This would add a dynamic aspect to the web app, making it less static.
+
+
+Have a look at the code and let me know if you have any suggestions or feedback !
+You can also peak at the latest deployment on Vercel here: https://reels-react-app.vercel.app/
+ ~ Created By Colin Muriithi with ❤️
