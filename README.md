@@ -13,5 +13,9 @@ It contains the following features:
 
 
 Have a look at the code and let me know if you have any suggestions or feedback !
-You can also peak at the latest deployment on Vercel here: https://reels-react-app.vercel.app/
+
+You can also peak at the latest deployment on Vercel here: 
+https://reels-react-app.vercel.app/
+
+
  ~ Created By Colin Muriithi with ❤️
